@@ -3,7 +3,7 @@ const desktopNav = document.querySelector('.desktop-menu');
 const menuHamIcon = document.querySelector('.menu');
 const menuCarIcon = document.querySelector('.navbar-shopping-cart');
 const mobileMenu = document.querySelector('.mobile-menu');
-const aside = document.querySelector('.product-detail');
+const shoppingCartContainer = document.querySelector('#shopping-cart-container');
 const cardsContainer = document.querySelector('.cards-container');
 
 navEmail.addEventListener('click', toggleDesktopNav);
@@ -11,20 +11,20 @@ menuHamIcon.addEventListener('click', toggleMobileNav);
 menuCarIcon.addEventListener('click', toggleCarAside);
 
 function toggleDesktopNav() {
-   const isAsideClosed = aside.classList.contains('inactive');
+   const isAsideClosed = shoppingCartContainer.classList.contains('inactive');
 
    if (!isAsideClosed) {
-      aside.classList.add('inactive');
+      shoppingCartContainer.classList.add('inactive');
    } 
    
    desktopNav.classList.toggle('inactive');
 }
 
 function toggleMobileNav() {
-   const isAsideClosed = aside.classList.contains('inactive');
+   const isAsideClosed = shoppingCartContainer.classList.contains('inactive');
 
    if (!isAsideClosed) {
-      aside.classList.add('inactive');
+      shoppingCartContainer.classList.add('inactive');
    } 
    mobileMenu.classList.toggle('inactive');
 }
@@ -38,7 +38,7 @@ function toggleCarAside() {
       desktopNav.classList.add('inactive');
    }
    
-   aside.classList.toggle('inactive');   
+   shoppingCartContainer.classList.toggle('inactive');   
 }
 
 const productList = [];
@@ -80,6 +80,7 @@ productList.push({
       </div>
     </div> */
 
+// Maquetacion de HTML con JavaScript 
 function renderProducts(arr) {
    for(product of arr){
       const productCard = document.createElement('div');
